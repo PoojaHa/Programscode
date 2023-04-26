@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: crimson;
+            position: relative;
+            animation-name: anim;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            animation-duration: reverse;
+         }
+        @keyframes anim {
+            /* from {
+                left:0;
+                right:0;
+                background-color: blueviolet;
+            }
+            to{
+                left:500px;
+                top:0;
+                background-color: brown;
+            } */
+            0% {
+                left:0;
+                top:0;
+                background-color: blueviolet;
+            }
+            25%{
+                left:500px;
+                top:0;
+                background-color: brown;
+            }
+            50%{
+                left:500px;
+                top:500px;
+                background-color: brown;
+            }
+            75%{
+                left:0;
+                top:500px;
+                background-color: aqua;
+            }
+            100% {
+                left:0;
+                top:0;
+                background-color: blueviolet;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+
+    </div>
+</body>
+</html>

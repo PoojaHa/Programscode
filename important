@@ -1,0 +1,58 @@
+import React from 'react'
+import { useState } from 'react'
+
+const Design = () => {
+    const [text,setText]=useState("");
+    const [todos,setTodos]=useState([]);
+
+    // const handleText =(e)=>{
+    //     setText(e.target.value)
+    // }
+    const handleClick=(e)=>{
+       e.preventDefault();
+    //    setTodos([...todos,text])
+    //    console.log(todos)
+    setTodos((listdata)=>{
+        const updateData =[...listdata,text];
+        // console.log(updateData)
+        return updateData
+    })
+}
+   const handleDelete=(index)=>{
+
+     const filterddata = todos.filter((el,id)=>{
+        return id!=index
+     })
+      setTodos(filterddata)
+   }
+   
+  return (
+    <div>
+        <div className="container">
+            <div className="main" >
+                <form>
+                    <input type="text" onChange={(e)=>setText(e.target.value)}/>
+                    <button className='btn' onClick={handleClick} >AddItem</button>
+                    
+                </form>
+                {todos && todos.map((todolist,i)=>{
+                            return(
+                        <div className='list' key={i}>
+                            <p className='listdata'>{todolist}</p>
+                            <button className='btn mt-1 ' onClick={()=>handleDelete(i)}>Remove</button>
+                        </div>
+                              
+                  
+                    )
+                           
+                })}
+                   
+                 {todos && <button className='btn' onClick={removeAll}>romveAll</button>}   
+            </div>
+        </div>
+
+    </div>
+  )
+}
+
+export default Design
